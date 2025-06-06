@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Staggered Reveal Animation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-100">
+
+  <!-- Container -->
+  <section class="flex flex-col md:flex-row justify-between items-center min-h-screen px-8 py-16 gap-8">
+    
+    <!-- Left Content -->
+    <div class="flex flex-col space-y-6 max-w-md">
+      <p data-aos="fade-down" data-aos-duration="1000" class="text-lg text-gray-700">
+        Data Science
+      </p>
+      <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" class="text-lg text-gray-700">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet temporibus tenetur sit necessitatibus odit facere ex cupiditate aliquam mollitia. Officia quaerat ab eos, dignissimos autem deleniti assumenda maxime ad consectetur?
+      </p>
+    </div>
+
+    <!-- Right Image -->
+    <div data-aos="fade-left" data-aos-duration="1000" data-aos-delay="1000" class="w-full md:w-1/2">
+      <img src="Data Science.jpeg.jpg" alt="Placeholder" class="rounded shadow-lg mx-auto" />
+    </div>
+
+       <div class="flex flex-col space-y-6 max-w-md">
+      <p data-aos="fade-down" data-aos-duration="1000" class="text-lg text-gray-700">
+        AI ML
+      </p>
+      <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" class="text-lg text-gray-700">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis quas minima, reiciendis architecto obcaecati vel sapiente illum. Voluptatum, eligendi tempora magnam qui earum distinctio sapiente voluptate error aut quos necessitatibus?
+      </p>
+    </div>
+
+    <!-- Right Image -->
+    <div data-aos="fade-left" data-aos-duration="1000" data-aos-delay="1000" class="w-full md:w-1/2">
+      <img src="AIML.jpeg.jpg" alt="Placeholder" class="rounded shadow-lg mx-auto" />
+    </div>
+ 
+
+       <div class="flex flex-col space-y-6 max-w-md">
+      <p data-aos="fade-down" data-aos-duration="1000" class="text-lg text-gray-700">
+        Web Development
+      </p>
+      <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" class="text-lg text-gray-700">
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt vero commodi laudantium. Enim quae non harum unde minus laborum debitis, facere in, dolor hic beatae, totam magnam quia! Molestias, pariatur.
+      </p>
+    </div>
+
+    <!-- Right Image -->
+    <div data-aos="fade-left" data-aos-duration="1000" data-aos-delay="1000" class="w-full md:w-1/2">
+      <img src="Web Dev.jpeg.jpg" alt="Web dev" class="rounded shadow-lg mx-auto" />
+    </div>
+ 
+  </section>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>
