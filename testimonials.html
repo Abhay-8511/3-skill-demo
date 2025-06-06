@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Testimonials Section</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- Owl Carousel CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1a1a2e;
+      margin: 0;
+      padding: 0;
+    }
+
+   
+
+   
+
+    .testimonial-container {
+      max-width: 1000px;
+      margin: 50px auto;
+      background: #12121b;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 40px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-header h1 {
+      color: #1c5dde;
+      font-size: 32px;
+      
+    }
+
+    .section-header p {
+      color: #ece1e1;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    .testimonials-slider .testimonials-item {
+      background: #737171f1;
+      padding: 25px;
+      border-radius: 8px;
+      text-align: center;
+      position: relative;
+      margin: 10px;
+    }
+
+    .testimonials-item .profile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .profile-image img {
+      width: auto;
+      height: 75px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .profile-desc span:first-child {
+      font-weight: bold;
+      display: block;
+      color: #ffffff;
+    }
+
+    .profile-desc span:last-child {
+      font-size: 12px;
+      color: #ffffff;
+    }
+
+    .testimonials-item p {
+      font-size: 15px;
+      color: #d9d8d8;
+      margin: 20px 0;
+    }
+
+    .quote {
+      color: #aaa;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .ratings i {
+      color: #f1c40f;
+    }
+
+    /* Make it responsive */
+    @media (max-width: 768px) {
+      .testimonial-container {
+        padding: 20px;
+      }
+    }
+
+    /* Make Owl Carousel navigation buttons larger */
+    .owl-nav button.owl-prev,
+    .owl-nav button.owl-next {
+      font-size: 24px !important;
+      width: 50px;
+      height: 50px;
+      background-color: #616366 !important;
+      border-radius: 50%;
+      margin: 0 10px;
+      color: #000000 !important;
+      transition: background-color 0.3s ease;
+    }
+
+    .owl-nav button.owl-prev:hover,
+    .owl-nav button.owl-next:hover {
+      background-color: #3866dc !important;
+    }
+
+    .owl-nav {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="testimonial-container">
+    <section class="testimonials" id="testimonials">
+      <!-- Section Header -->
+      <header class="section-header">
+        <h1>Testimonials</h1>
+        <p>See What Our Prouded Testimonials Say's About Us</p>
+      </header>
+
+      <!-- Testimonials -->
+      <div class="owl-carousel owl-theme testimonials-slider">
+        <div class="item testimonials-item">
+          <div class="profile">
+            <div class="profile-image">
+              <img src="https://cdn.shopify.com/s/files/1/0625/1911/5875/files/WhatsApp_Image_2025-04-03_at_22.52.08_fb9a0a9c.jpg?v=1743751168" />
+            </div>
+            <div class="profile-desc">
+              <span>Dibyaranjan Jena</span>
+              <span>Intern, Data Science</span>
+            </div>
+          </div>
+          <p>I joined the Data Science Training Program at 3SKILL and it was totally worth it. They started from the basics and covered Python, data analysis, statistics, and even data visualization. The projects were based on real-world problems which gave me the confidence to apply for analyst roles.</p>
+          <div class="quote"><i class="fa fa-quote-left"></i></div>
+          <div class="ratings">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+        </div>
+
+        <div class="item testimonials-item">
+          <div class="profile">
+            <div class="profile-image">
+              <img src="https://cdn.shopify.com/s/files/1/0625/1911/5875/files/WhatsApp_Image_2025-04-03_at_22.51.11_f6a142d7.jpg?v=1743751401" />
+            </div>
+            <div class="profile-desc">
+              <span>Abinash Jena</span>
+              <span>Intern, Data Science</span>
+            </div>
+          </div>
+          <p>I wanted to explore data science and 3SKILL was the perfect platform. The 1-month internship was packed with useful lessons and real-time tasks. I got a certificate and experience letter, which I proudly added to my LinkedIn. This course truly helped me stand out.</p>
+          <div class="quote"><i class="fa fa-quote-left"></i></div>
+          <div class="ratings">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+        </div>
+
+        <div class="item testimonials-item">
+          <div class="profile">
+            <div class="profile-image">
+              <img src="https://cdn.shopify.com/s/files/1/0625/1911/5875/files/WhatsApp_Image_2025-04-02_at_19.07.44_454f4f6c.jpg?v=1743690980" />
+            </div>
+            <div class="profile-desc">
+              <span>Sunil Kumar Sahoo</span>
+              <span>Intern, Web Development</span>
+            </div>
+          </div>
+          <p>The Website Development Internship by 3SKILL was a complete game changer for me. The live classes were interactive, the mentors were extremely supportive, and the projects helped me build a real portfolio. I finally understood how websites actually work from scratch. Highly recommended to anyone who wants to learn frontend development in a practical way!</p>
+          <div class="quote"><i class="fa fa-quote-left"></i></div>
+          <div class="ratings">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+        </div>
+
+
+        <div class="item testimonials-item">
+          <div class="profile">
+            <div class="profile-image">
+              <img src="https://cdn.shopify.com/s/files/1/0625/1911/5875/files/WhatsApp_Image_2025-04-02_at_14.11.17_92dbae16.jpg?v=1743690917" />
+            </div>
+            <div class="profile-desc">
+              <span>Pradeep Kumar Singha</span>
+              <span>Intern, Data Science</span>
+            </div>
+          </div>
+          <p>I was always curious about AI but didn't know where to start. 3SKILL's AI Internship Program explained everything clearly—from Python basics to deep learning. The best part was getting to work on actual projects and receiving an internship certificate, which helped me during campus placements.</p>
+          <div class="quote"><i class="fa fa-quote-left"></i></div>
+          <div class="ratings">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+        </div>
+        
+
+        <!-- Add more testimonials if needed -->
+      </div>
+    </section>
+  </div>
+
+  <!-- Owl Carousel JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      $(".testimonials-slider").owlCarousel({
+        items: 1,
+        loop: true,
+        margin: 10,
+        nav: true,
+        dots: true,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true
+      });
+    });
+  </script>
+</body>
+</html>
