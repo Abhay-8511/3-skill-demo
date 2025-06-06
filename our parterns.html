@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Partners - 3Skill</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    .partners-section {
+      padding: 60px 20px;
+      text-align: center;
+      background-color: #ffffff;
+    }
+
+    .partners-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #333333;
+    }
+
+    .partners-carousel {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+    }
+
+    .carousel-track {
+      display: flex;
+      width: calc(150px * 10); /* Adjust based on number of logos */
+      animation: scroll 20s linear infinite;
+    }
+
+    .carousel-track:hover {
+      animation-play-state: paused;
+    }
+
+    .partner-logo {
+      flex: 0 0 340px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+    }
+
+    .partner-logo img {
+      max-width: 100%;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .partner-logo img:hover {
+      transform: scale(1.1);
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .partners-section h2 {
+        font-size: 2rem;
+      }
+      .partner-logo {
+        flex: 0 0 200px;
+      }
+      .carousel-track {
+        width: calc(150px * 10); /* Adjust based on number of logos */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="partners-section">
+    <h2>Our Trusted Partners</h2>
+    <div class="partners-carousel">
+      <div class="carousel-track">
+        <!-- Duplicate logos for seamless scrolling -->
+        <div class="partner-logo">
+          <img src="https://3skill.shop/White%20and%20Black%20Minimal%20Letter%20SA%20Architect%20Company%20Logo%20(2).png" alt="Partner 1" />
+        </div>
+        <div class="partner-logo">
+          <img src="https://3skill.shop/White%20and%20Black%20Minimal%20Letter%20SA%20Architect%20Company%20Logo%20(3).png" alt="Partner 2" />
+        </div>
+        <div class="partner-logo">
+          <img src="https://3skill.shop/White%20and%20Black%20Minimal%20Letter%20SA%20Architect%20Company%20Logo%20(5).png" alt="Partner 3" />
+        </div>
+        <div class="partner-logo">
+          <img src="https://3skill.shop/White%20and%20Black%20Minimal%20Letter%20SA%20Architect%20Company%20Logo%20(4).png" alt="Partner 4" />
+        </div>
+       
+        <!-- Repeat logos for seamless loop -->
+        <div class="partner-logo">
+          <img src="https://3skill.shop/White%20and%20Black%20Minimal%20Letter%20SA%20Architect%20Company%20Logo%20(2).png" alt="Partner 1" />
+        </div>
+
+
+        <div class="partner-logo">
+          <img src="https://3skill.shop/White%20and%20Black%20Minimal%20Letter%20SA%20Architect%20Company%20Logo%20(3).png" alt="Partner 4" />
+        </div>
+
+        <div class="partner-logo">
+          <img src="https://3skill.shop/White%20and%20Black%20Minimal%20Letter%20SA%20Architect%20Company%20Logo%20(5).png" alt="Partner 4" />
+        </div>
+
+        <div class="partner-logo">
+          <img src="https://3skill.shop/White%20and%20Black%20Minimal%20Letter%20SA%20Architect%20Company%20Logo%20(4).png" alt="Partner 4" />
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step-Progress bar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+    .btn {
+            transition: all 0.3s ease-out;
+            border-radius: 0.5rem;     
+            font-weight: 600;          
+        }
+        .btn-primary {
+            background-color: #4F46E5; 
+            color: rgb(255, 255, 255);
+        }
+        .btn-primary:hover {
+            background-color: #4338CA;
+            transform: translateY(-3px) scale(1.03); 
+            box-shadow: 0 6px 12px rgba(79, 70, 229, 0.5);
+        }
+        .btn-secondary {
+            background-color: #EC4899;
+            color: white;
+        }
+        .btn-secondary:hover {
+            background-color: #DB2777; 
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 6px 12px rgba(236, 72, 153, 0.5);
+        }
+        .progress-container { display: flex; justify-content: space-between; position: relative; margin-bottom: 30px; width: 100%; }
+        .progress-line { background-color: #4F46E5; position: absolute; top: 50%; left: 0; transform: translateY(-50%); height: 4px; width: 0%; z-index: 1; transition: width 0.5s ease-in-out; }
+        .progress-line-bg { background-color: white; position: absolute; top: 50%; left: 0; transform: translateY(-50%); height: 4px; width: 100%; z-index: 0; }
+        .progress-step { width: 40px; height: 40px; background-color: white; border: 3px solid #e0e0e0; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 2; transition: all 0.4s ease; font-weight: bold; color: #a0a0a0; }
+        .progress-step.active { border-color: #4F46E5; background-color: #4F46E5; color: white; transform: scale(1.1); }
+        .progress-step.active .step-icon { animation: pulseIcon 1s infinite alternate; }
+        @keyframes pulseIcon { 0% { transform: scale(1); } 100% { transform: scale(1.2); } }
+        .step-label { text-align: center; margin-top: 10px; font-size: 0.875rem; color: #4b5563; font-weight: 500; opacity: 0; transform: translateY(10px); transition: opacity 0.5s ease-out 0.2s, transform 0.5s ease-out 0.2s; }
+        .progress-step.active + .step-label, .progress-step.completed + .step-label { opacity: 1; transform: translateY(0); }
+        .progress-step.completed { border-color: #34D399; background-color: #34D399; color: white; } 
+        .step-icon { font-size: 1.1rem; transition: transform 0.3s ease; }
+
+</style>
+</head>
+<body>
+    <section id="how-it-works" class="py-20 bg-indigo-50">
+  <div class="container mx-auto px-6">
+    <h2 class="text-4xl font-bold text-center text-gray-800 mb-16 section-title animated-element">How It Works</h2>
+    <div class="max-w-3xl mx-auto">
+      <div class="progress-container mb-8 animated-element fade-in">
+        <div class="progress-line-bg"></div>
+        <div class="progress-line" id="progress-line"></div>
+        <div class="progress-step active" data-step="1"><i class="fas fa-user-plus step-icon"></i></div>
+        <div class="progress-step" data-step="2"><i class="fas fa-comments step-icon"></i></div>
+        <div class="progress-step" data-step="3"><i class="fas fa-file-signature step-icon"></i></div>
+        <div class="progress-step" data-step="4"><i class="fas fa-laptop-code step-icon"></i></div>
+        <div class="progress-step" data-step="5"><i class="fas fa-certificate step-icon"></i></div>
+      </div>
+      <div class="flex justify-between text-center animated-element fade-in" style="animation-delay: 0.2s;">
+        <div class="w-1/5"><p class="step-label" data-step-label="1">Enroll</p></div>
+        <div class="w-1/5"><p class="step-label" data-step-label="2">Interview</p></div>
+        <div class="w-1/5"><p class="step-label" data-step-label="3">Offer Letter</p></div>
+        <div class="w-1/5"><p class="step-label" data-step-label="4">Hands-on Experience</p></div>
+        <div class="w-1/5"><p class="step-label" data-step-label="5">Get Certified</p></div>
+      </div>
+    </div>
+    <div class="text-center mt-12 animated-element fade-in-up" style="animation-delay: 0.4s;">
+      <button id="prevStep" class="btn btn-primary py-2 px-6 mr-2 opacity-50" disabled>Previous Step</button>
+      <button id="nextStep" class="btn btn-primary py-2 px-6">Next Step</button>
+    </div>
+  </div>
+</section>
+<script>
+    function setupProgressBar() {
+  const progressLine = document.getElementById('progress-line');
+  const progressSteps = document.querySelectorAll('.progress-step');
+  const stepLabels = document.querySelectorAll('.step-label');
+  const nextButton = document.getElementById('nextStep');
+  const prevButton = document.getElementById('prevStep');
+
+  let currentActiveStep = 1;
+
+  const updateProgressBarState = () => {
+    progressSteps.forEach((step) => {
+      const stepNumber = parseInt(step.dataset.step);
+      step.classList.remove('active', 'completed');
+      if (stepNumber < currentActiveStep) {
+        step.classList.add('completed');
+      } else if (stepNumber === currentActiveStep) {
+        step.classList.add('active');
+      }
+    });
+
+    stepLabels.forEach(label => {
+      const labelStep = parseInt(label.dataset.stepLabel);
+      label.style.opacity = labelStep <= currentActiveStep ? '1' : '0';
+      label.style.transform = labelStep <= currentActiveStep ? 'translateY(0)' : 'translateY(10px)';
+    });
+
+    const progressPercentage = ((currentActiveStep - 1) / (progressSteps.length - 1)) * 100;
+    progressLine.style.width = `${progressPercentage}%`;
+
+    prevButton.disabled = currentActiveStep === 1;
+    nextButton.disabled = currentActiveStep === progressSteps.length;
+
+    prevButton.classList.toggle('opacity-50', prevButton.disabled);
+    nextButton.classList.toggle('opacity-50', nextButton.disabled);
+    nextButton.textContent = currentActiveStep === progressSteps.length ? "Completed!" : "Next Step";
+  };
+
+  nextButton.addEventListener('click', () => {
+    if (currentActiveStep < progressSteps.length) {
+      currentActiveStep++;
+      updateProgressBarState();
+    }
+  });
+
+  prevButton.addEventListener('click', () => {
+    if (currentActiveStep > 1) {
+      currentActiveStep--;
+      updateProgressBarState();
+    }
+  });
+
+  updateProgressBarState();
+}
+
+document.addEventListener('DOMContentLoaded', setupProgressBar);
+
+</script>
+</body>
+</html>
